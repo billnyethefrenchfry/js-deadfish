@@ -1,4 +1,4 @@
-export function deadfish (code, ascii) {
+export default function deadfish (code, ascii) {
 	let a = 0
 	let x = []
 	let c = code.split("")
