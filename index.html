@@ -5,6 +5,13 @@
 		<title>js-deadfish</title>
 	</head>
 	<body>
-		<p>cum<p/>
+		<input type="text" id="code">
+		<p id="deadfish"></p>
+		<script>
+			import "./deadfish.js"
+			document.getElementById("code").addEventListener("keydown", function(e){
+				document.getElementById("deadfish").innerHTML = deadfish(document.getElementById("deadfish"))
+			})
+		</script>
 	</body>
 </html>
