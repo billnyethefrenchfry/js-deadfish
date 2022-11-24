@@ -9,9 +9,9 @@
 		<p id="deadfish"></p>
 		<script type="module">
 			import { deadfish } from "./deadfish.js"
-			document.getElementById("code").addEventListener("keydown", function(e){
+			document.getElementById("code").addEventListener("keydown", function(e){setTimeout(function(){
 				document.getElementById("deadfish").innerHTML = deadfish(document.getElementById("code").value)
-			})
+			},10)})
 		</script>
 	</body>
 </html>
