@@ -5,13 +5,20 @@
 		<title>js-deadfish</title>
 	</head>
 	<body>
-		<input type="text" id="code">
+		<input type="text" id="code" style="width: 75vw; font-family: monospace"><br>
+		<select id="select">
+			<option value="raw">Raw data</option>
+			<option value="ascii">Raw data</option>
+		</select>
 		<p id="deadfish"></p>
 		<script type="module">
 			import { deadfish } from "./deadfish.js"
-			document.getElementById("code").addEventListener("keydown", function(e){setTimeout(function(){
-				document.getElementById("deadfish").innerHTML = deadfish(document.getElementById("code").value)
-			},10)})
+			function out () {
+				setTimeout(function(){
+					document.getElementById("deadfish").innerHTML = deadfish(document.getElementById("code").value, (document.getElementById("select").value == "ascii"))
+				}, 10)}
+			document.getElementById("code").addEventListener("keydown", out())
+			document.getElementById("select").addEventListener("click", out())
 		</script>
 	</body>
 </html>
