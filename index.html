@@ -13,13 +13,12 @@
 		<p id="deadfish"></p>
 		<script type="module">
 			import { deadfish } from "./deadfish.js"
-			function out () {
-				setTimeout(function(){
-					document.getElementById("deadfish").innerHTML = deadfish(document.getElementById("code").value, (document.getElementById("ascii").value == "ascii"))
-				}, 10)
-			}
-			document.getElementById("code").addEventListener("keydown", out())
-			document.getElementById("ascii").addEventListener("click", out())
+			document.getElementById("code").addEventListener("keydown", function(e){setTimeout(function(){
+				document.getElementById("deadfish").innerHTML = deadfish(document.getElementById("code").value, (document.getElementById("ascii").value == "ascii"))
+			}, 10)})
+			document.getElementById("ascii").addEventListener("click", function(e){setTimeout(function(){
+				document.getElementById("deadfish").innerHTML = deadfish(document.getElementById("code").value, (document.getElementById("ascii").value == "ascii"))
+			}, 10)})
 		</script>
 	</body>
 </html>
