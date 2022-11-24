@@ -1,8 +1,8 @@
 export function deadfish (code, ascii) {
 	let a = 0
 	let x = []
-	let c = code.split("")
 	if (typeof(code) === "string") {
+		let c = code.split("")
 		for (let i = 0; i < code.length; i++) {
 			switch (c[i]) {
 				case 'i':
